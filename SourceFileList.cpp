@@ -30,7 +30,7 @@ namespace ImzML {
 		os << "<sourceFileList count=\"" << sourceFileList.sourceFileList.size() << "\">" << std::endl;
 
 		sourceFileList.indent++;
-		for(int i = 0; i < sourceFileList.sourceFileList.size(); i++)
+        for(ImzML::SourceFileList::sourceFileList_type::size_type i = 0; i < sourceFileList.sourceFileList.size(); i++)
 			os << *sourceFileList.sourceFileList[i] << std::endl;
 		sourceFileList.indent--;
 

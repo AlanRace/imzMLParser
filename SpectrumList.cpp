@@ -14,6 +14,8 @@ namespace ImzML {
 	SpectrumList::SpectrumList(int count,
 			boost::shared_ptr<ImzML::DataProcessing> defaultDataProcessingRef) {
 		this->defaultDataProcessingRef = defaultDataProcessingRef;
+
+        spectrumList.reserve(count);
 	}
 
 	SpectrumList::~SpectrumList()
@@ -34,16 +36,16 @@ namespace ImzML {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const ImzML::SpectrumList& spectrumList) {
-		for(int i = 0; i < spectrumList.indent; i++)
+        for(int i = 0; i < spectrumList.indent; i++)
 			os << spectrumList.indentString;
 		os << "<spectrumList count=\"" << spectrumList.spectrumList.size() << "\" defaultDataProcessingRef=\"" << spectrumList.defaultDataProcessingRef->getID() << "\">" << std::endl;
 
 		spectrumList.indent++;
-		for(int i = 0; i < spectrumList.spectrumList.size(); i++)
+        for(ImzML::SpectrumList::spectrumList_type::size_type i = 0; i < spectrumList.spectrumList.size(); i++)
 			os << *spectrumList.spectrumList[i] << std::endl;
 		spectrumList.indent--;
 
-		for(int i = 0; i < spectrumList.indent; i++)
+        for(int i = 0; i < spectrumList.indent; i++)
 			os << spectrumList.indentString;
 		os << "</spectrumList>";
 

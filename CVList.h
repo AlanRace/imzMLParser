@@ -17,7 +17,9 @@ namespace ImzML {
 
 	class CVList : public MzMLContent {
 	private:
-		std::vector<ImzML::CV*> cvList;
+        typedef std::vector<ImzML::CV*> cvList_type;
+
+        cvList_type cvList;
 
 	public:
 		CVList(int count);

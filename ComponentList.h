@@ -17,9 +17,13 @@ namespace ImzML {
 
 	class ComponentList : public MzMLContent {
 	private:
-		std::vector< boost::shared_ptr<ImzML::Source> > sources;
-		std::vector< boost::shared_ptr<ImzML::Analyser> > analysers;
-		std::vector< boost::shared_ptr<ImzML::Detector> > detectors;
+        typedef std::vector< boost::shared_ptr<ImzML::Source> > sources_type;
+        typedef std::vector< boost::shared_ptr<ImzML::Analyser> > analysers_type;
+        typedef std::vector< boost::shared_ptr<ImzML::Detector> > detectors_type;
+
+        sources_type sources;
+        analysers_type analysers;
+        detectors_type detectors;
 
 
 	public:

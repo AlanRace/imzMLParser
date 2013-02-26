@@ -17,7 +17,9 @@ namespace ImzML {
 
 	class ReferenceableParamGroupList : MzMLContent {
 		protected:
-			std::vector< boost::shared_ptr<ImzML::ReferenceableParamGroup> > referenceableParamGroupList;
+            typedef std::vector< boost::shared_ptr<ImzML::ReferenceableParamGroup> > referenceableParamGroupList_type;
+
+            referenceableParamGroupList_type referenceableParamGroupList;
 
 		public:
 			ReferenceableParamGroupList(int count);

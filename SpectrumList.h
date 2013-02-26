@@ -19,7 +19,9 @@ namespace ImzML {
 	class SpectrumList : public ImzML::MzMLContent {
 
 		protected:
-			std::vector< boost::shared_ptr<ImzML::Spectrum> > spectrumList;
+            typedef std::vector< boost::shared_ptr<ImzML::Spectrum> > spectrumList_type;
+
+            spectrumList_type spectrumList;
 
 			boost::shared_ptr<ImzML::DataProcessing> defaultDataProcessingRef;
 

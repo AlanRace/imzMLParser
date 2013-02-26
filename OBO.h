@@ -22,6 +22,8 @@ namespace ImzML {
 
 	class OBO {
 	private:
+        typedef std::vector< boost::shared_ptr<OBO> > imports_type;
+
 		std::string formatVersion;
 		std::string data;
 		std::string savedBy;
@@ -31,7 +33,7 @@ namespace ImzML {
 		// Taken from the id, before the ':' e.g. IMS, MS, UO, PATO for faster matching of terms
 		std::string ns;
 
-		std::vector< boost::shared_ptr<OBO> > imports;
+        imports_type imports;
 		std::vector<std::string> remarks;
 
 		std::map<int , boost::shared_ptr<ImzML::OBOTerm> > terms;

@@ -19,14 +19,16 @@ namespace ImzML {
 	class BinaryDataArrayList : public ImzML::MzMLContent {
 
 	protected:
-		std::vector< boost::shared_ptr<BinaryDataArray> > binaryDataArrayList;
+        typedef std::vector< boost::shared_ptr<BinaryDataArray> > binaryDataArrayList_type;
+
+        binaryDataArrayList_type binaryDataArrayList;
 
 	public:
 		BinaryDataArrayList(std::vector< boost::shared_ptr<ImzML::BinaryDataArray> >::size_type count);
 		virtual ~BinaryDataArrayList();
 
 		void addBinaryDataArray(boost::shared_ptr<ImzML::BinaryDataArray> binaryDataArray);
-		boost::shared_ptr<ImzML::BinaryDataArray> getBinaryDataArray(int index);
+        boost::shared_ptr<ImzML::BinaryDataArray> getBinaryDataArray(binaryDataArrayList_type::size_type index);
 
 		int size();
 

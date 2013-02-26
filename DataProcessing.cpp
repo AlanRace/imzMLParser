@@ -18,7 +18,7 @@ namespace ImzML {
 			os << dataProcessing.indentString;
 		os << "<dataProcessing id=\"" << dataProcessing.id << "\">" << std::endl;
 
-		for(int i = 0; i < dataProcessing.processingMethods.size(); i++)
+        for(ImzML::DataProcessing::processingMethods_type::size_type i = 0; i < dataProcessing.processingMethods.size(); i++)
 			os << *dataProcessing.processingMethods[i] << std::endl;
 
 		for(int i = 0; i < dataProcessing.indent; i++)

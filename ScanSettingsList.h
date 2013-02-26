@@ -19,7 +19,9 @@ namespace ImzML {
 	class ScanSettingsList : public ImzML::MzMLContent {
 
 	protected:
-		std::vector< boost::shared_ptr<ImzML::ScanSettings> > scanSettingsList;
+        typedef std::vector< boost::shared_ptr<ImzML::ScanSettings> > scanSettingsList_type;
+
+        scanSettingsList_type scanSettingsList;
 
 	public:
 		ScanSettingsList(int count);

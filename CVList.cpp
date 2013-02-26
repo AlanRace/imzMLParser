@@ -32,7 +32,7 @@ namespace ImzML {
 		os << "<cvList count=\"" << cvList.cvList.size() << "\">" << std::endl;
 
 		cvList.indent++;
-		for(int i = 0; i < cvList.cvList.size(); i++)
+        for(ImzML::CVList::cvList_type::size_type i = 0; i < cvList.cvList.size(); i++)
 			os << *cvList.cvList[i] << std::endl;
 		cvList.indent--;
 

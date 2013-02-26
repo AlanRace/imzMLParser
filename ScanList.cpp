@@ -26,7 +26,7 @@ namespace ImzML {
 		scanList.indent++;
 		os << (ImzML::MzMLContent&) scanList;
 
-		for(int i = 0; i < scanList.scanList.size(); i++)
+        for(ImzML::ScanList::scanList_type::size_type i = 0; i < scanList.scanList.size(); i++)
 			os << *scanList.scanList[i] << std::endl;
 
 		scanList.indent--;

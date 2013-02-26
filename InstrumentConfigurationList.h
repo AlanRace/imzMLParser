@@ -21,7 +21,9 @@ namespace ImzML {
 
 	class InstrumentConfigurationList : public ImzML::MzMLContent {
 		protected:
-			std::vector< boost::shared_ptr<ImzML::InstrumentConfiguration> > instrumentConfigurationList;
+            typedef std::vector< boost::shared_ptr<ImzML::InstrumentConfiguration> > instrumentConfigurationList_type;
+
+            instrumentConfigurationList_type instrumentConfigurationList;
 
 		public:
 			InstrumentConfigurationList(std::vector< boost::shared_ptr<ImzML::InstrumentConfiguration> >::size_type count);

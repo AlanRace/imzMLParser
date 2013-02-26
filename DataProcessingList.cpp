@@ -40,7 +40,7 @@ namespace ImzML {
 		os << "<dataProcessingList count=\"" << dpl.dataProcessingList.size() << "\">" << std::endl;
 
 		dpl.indent++;
-		for(int i = 0; i < dpl.dataProcessingList.size(); i++)
+        for(ImzML::DataProcessingList::dataProcessingList_type::size_type i = 0; i < dpl.dataProcessingList.size(); i++)
 			os << *dpl.dataProcessingList[i] << std::endl;
 		dpl.indent--;
 

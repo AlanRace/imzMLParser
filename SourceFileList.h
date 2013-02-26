@@ -18,8 +18,10 @@
 namespace ImzML {
 
 	class SourceFileList : public ImzML::MzMLContent {
-	private:
-		std::vector< boost::shared_ptr<SourceFile> > sourceFileList;
+    private:
+        typedef std::vector< boost::shared_ptr<SourceFile> > sourceFileList_type;
+
+        sourceFileList_type sourceFileList;
 
 	public:
 		SourceFileList(int count);

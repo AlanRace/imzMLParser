@@ -14,9 +14,11 @@ namespace ImzML {
 
 	class FileDescription : public ImzML::MzMLContent {
 		protected:
+            typedef std::vector< boost::shared_ptr<ImzML::Contact> > contacts_type;
+
 			boost::shared_ptr<ImzML::FileContent> fileContent;
 			boost::shared_ptr<ImzML::SourceFileList> sourceFileList;
-			std::vector< boost::shared_ptr<ImzML::Contact> > contacts;
+            contacts_type contacts;
 
 		public:
 			FileDescription();

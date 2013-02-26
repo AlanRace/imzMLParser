@@ -34,7 +34,7 @@ namespace ImzML {
 		if(fileDescription.sourceFileList)
 			os << *fileDescription.sourceFileList << std::endl;
 
-		for(int i = 0; i < fileDescription.contacts.size(); i++)
+        for(ImzML::FileDescription::contacts_type::size_type i = 0; i < fileDescription.contacts.size(); i++)
 			os << fileDescription.contacts[i] << std::endl;
 
 		fileDescription.indent--;

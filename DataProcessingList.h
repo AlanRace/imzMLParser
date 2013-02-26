@@ -18,7 +18,9 @@ namespace ImzML {
 
 	class DataProcessingList : public ImzML::MzMLContent {
 	protected:
-		std::vector< boost::shared_ptr<ImzML::DataProcessing> > dataProcessingList;
+        typedef std::vector< boost::shared_ptr<ImzML::DataProcessing> > dataProcessingList_type;
+
+        dataProcessingList_type dataProcessingList;
 
 	public:
 		DataProcessingList(int count);

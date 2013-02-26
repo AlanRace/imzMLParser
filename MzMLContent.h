@@ -17,7 +17,9 @@ namespace ImzML {
 	class MzMLContent
 	{
 		protected:
-			std::vector<boost::shared_ptr<ImzML::ReferenceableParamGroup> > referenceableParamGroupRefs;
+            typedef std::vector<boost::shared_ptr<ImzML::ReferenceableParamGroup> > referenceableParamGroupRefs_type;
+
+            referenceableParamGroupRefs_type referenceableParamGroupRefs;
 
 			std::map<std::string, boost::shared_ptr<ImzML::CVParam> > cvParams;
 

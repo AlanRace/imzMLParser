@@ -39,11 +39,11 @@ namespace ImzML {
 		os << "<componentList count=\"" << (componentList.sources.size()+componentList.analysers.size()+componentList.detectors.size()) << "\">" << std::endl;
 
 		componentList.indent++;
-		for(int i = 0; i < componentList.sources.size(); i++)
+        for(ImzML::ComponentList::sources_type::size_type i = 0; i < componentList.sources.size(); i++)
 			os << *componentList.sources[i] << std::endl;
-		for(int i = 0; i < componentList.analysers.size(); i++)
+        for(ImzML::ComponentList::analysers_type::size_type i = 0; i < componentList.analysers.size(); i++)
 			os << *componentList.analysers[i] << std::endl;
-		for(int i = 0; i < componentList.detectors.size(); i++)
+        for(ImzML::ComponentList::detectors_type::size_type i = 0; i < componentList.detectors.size(); i++)
 			os << *componentList.detectors[i] << std::endl;
 		componentList.indent--;
 

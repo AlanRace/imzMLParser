@@ -47,7 +47,7 @@ namespace ImzML {
 		os << "<instrumentConfigurationList count=\"" << icl.instrumentConfigurationList.size() << "\">" << std::endl;
 
 		icl.indent++;
-		for(int i = 0; i < icl.instrumentConfigurationList.size(); i++)
+        for(ImzML::InstrumentConfigurationList::instrumentConfigurationList_type::size_type i = 0; i < icl.instrumentConfigurationList.size(); i++)
 			os << *icl.instrumentConfigurationList[i] << std::endl;
 		icl.indent--;
 

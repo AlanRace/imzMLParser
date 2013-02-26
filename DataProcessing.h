@@ -11,8 +11,10 @@ namespace ImzML {
 	class DataProcessing : public ImzML::MzMLContent
 	{
 		protected:
+            typedef std::vector< boost::shared_ptr<ImzML::ProcessingMethod> > processingMethods_type;
+
 			std::string id;
-			std::vector< boost::shared_ptr<ImzML::ProcessingMethod> > processingMethods;
+            processingMethods_type processingMethods;
 
 		public:
 			DataProcessing(std::string id) : id(id) { }

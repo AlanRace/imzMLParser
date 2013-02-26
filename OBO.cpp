@@ -175,7 +175,7 @@ namespace ImzML {
 			return terms[id];
 		}
 
-		for(int i = 0; i < imports.size(); i++) {
+        for(imports_type::size_type i = 0; i < imports.size(); i++) {
 			boost::shared_ptr<ImzML::OBOTerm> term = imports[i]->getTerm(ns, id);
 
 			if(term)

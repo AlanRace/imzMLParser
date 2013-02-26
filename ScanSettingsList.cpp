@@ -10,6 +10,7 @@
 namespace ImzML {
 
 	ScanSettingsList::ScanSettingsList(int count) {
+        scanSettingsList.reserve(count);
 	}
 
 	ScanSettingsList::~ScanSettingsList()
@@ -43,7 +44,7 @@ namespace ImzML {
 		os << "<scanSettingsList count=\"" << scanSettingsList.scanSettingsList.size() << "\">" << std::endl;
 
 		scanSettingsList.indent++;
-		for(int i = 0; i < scanSettingsList.scanSettingsList.size(); i++)
+        for(ImzML::ScanSettingsList::scanSettingsList_type::size_type i = 0; i < scanSettingsList.scanSettingsList.size(); i++)
 			os << *scanSettingsList.scanSettingsList[i] << std::endl;
 		scanSettingsList.indent--;
 

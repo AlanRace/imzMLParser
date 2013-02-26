@@ -38,7 +38,7 @@ namespace ImzML {
 		os << "<softwareList count=\"" << softwareList.softwareList.size() << "\">" << std::endl;
 
 		softwareList.indent++;
-		for(int i = 0; i < softwareList.softwareList.size(); i++)
+        for(ImzML::SoftwareList::softwareList_type::size_type i = 0; i < softwareList.softwareList.size(); i++)
 			os << *softwareList.softwareList[i] << std::endl;
 		softwareList.indent--;
 

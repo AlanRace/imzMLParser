@@ -33,7 +33,7 @@ namespace ImzML {
 	}
 
 	boost::shared_ptr<ImzML::CVParam> MzMLContent::getCVParamOrChild(std::string id) {
-		for(int i = 0; i < referenceableParamGroupRefs.size(); i++) {
+        for(referenceableParamGroupRefs_type::size_type i = 0; i < referenceableParamGroupRefs.size(); i++) {
 
 		}
 	}
@@ -65,7 +65,7 @@ namespace ImzML {
 	}
 
 	std::ostream& operator<<(std::ostream& os, const ImzML::MzMLContent& obj) {
-		for(int i = 0; i < obj.referenceableParamGroupRefs.size(); i++) {
+        for(ImzML::MzMLContent::referenceableParamGroupRefs_type::size_type i = 0; i < obj.referenceableParamGroupRefs.size(); i++) {
 			for(int j = 0; j < obj.indent; j++)
 				os << obj.indentString;
 

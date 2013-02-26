@@ -18,7 +18,9 @@ namespace ImzML {
 
 	class SoftwareList : public ImzML::MzMLContent {
 	private:
-		std::vector< boost::shared_ptr<Software> > softwareList;
+        typedef std::vector< boost::shared_ptr<Software> > softwareList_type;
+
+        softwareList_type softwareList;
 
 	public:
 		SoftwareList(std::vector< boost::shared_ptr<ImzML::Software> >::size_type count);

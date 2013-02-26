@@ -19,7 +19,7 @@ namespace ImzML {
 	BinaryDataArrayList::~BinaryDataArrayList()
 	{
 		// TODO: Auto-generated
-		for(int i= 0; i < binaryDataArrayList.size(); i++) {
+        for(binaryDataArrayList_type::size_type i= 0; i < binaryDataArrayList.size(); i++) {
 
 		}
 
@@ -29,7 +29,7 @@ namespace ImzML {
 		binaryDataArrayList.push_back(binaryDataArray);
 	}
 
-	boost::shared_ptr<ImzML::BinaryDataArray> BinaryDataArrayList::getBinaryDataArray(int index) {
+    boost::shared_ptr<ImzML::BinaryDataArray> BinaryDataArrayList::getBinaryDataArray(binaryDataArrayList_type::size_type index) {
 		if(index >= binaryDataArrayList.size())
 			return boost::shared_ptr<ImzML::BinaryDataArray>();
 
@@ -70,7 +70,7 @@ namespace ImzML {
 
 		bdal.indent++;
 
-		for(int i = 0; i < bdal.binaryDataArrayList.size(); i++)
+        for(ImzML::BinaryDataArrayList::binaryDataArrayList_type::size_type i = 0; i < bdal.binaryDataArrayList.size(); i++)
 			os << *bdal.binaryDataArrayList[i] << std::endl;
 
 		bdal.indent--;

@@ -15,10 +15,12 @@ namespace ImzML {
 	class ScanList : public ImzML::MzMLContent
 	{
 		protected:
-			std::vector< boost::shared_ptr<ImzML::Scan> > scanList;
+            typedef std::vector< boost::shared_ptr<ImzML::Scan> > scanList_type;
+
+            scanList_type scanList;
 
 		public:
-			ScanList(int count) { }
+            ScanList(int count) { scanList.reserve(count); }
 			~ScanList();
 
 			void addScan(boost::shared_ptr<Scan> scan);

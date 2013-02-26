@@ -115,3 +115,6 @@ HEADERS += \
 OTHER_FILES += \
     imzMLParser.pro.user
 
+unix: INCLUDEPATH += /usr/local/xerces/include/
+unix: LIBS += -L/usr/local/xerces/lib/
+unix|win32: LIBS += -lxerces-c

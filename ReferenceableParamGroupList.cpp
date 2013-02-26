@@ -11,6 +11,7 @@ namespace ImzML {
 
 	ReferenceableParamGroupList::ReferenceableParamGroupList(int count)
 	{
+        referenceableParamGroupList.reserve(count);
 	}
 
 	ReferenceableParamGroupList::~ReferenceableParamGroupList()
@@ -45,7 +46,7 @@ namespace ImzML {
 		os << "<referenceableParamGroupList count=\"" << rpgList.referenceableParamGroupList.size() << "\">" << std::endl;
 
 		rpgList.indent++;
-		for(int i = 0; i < rpgList.referenceableParamGroupList.size(); i++)
+        for(ImzML::ReferenceableParamGroupList::referenceableParamGroupList_type::size_type i = 0; i < rpgList.referenceableParamGroupList.size(); i++)
 			os << *rpgList.referenceableParamGroupList[i];
 		rpgList.indent--;
 
