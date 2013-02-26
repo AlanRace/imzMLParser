@@ -11,7 +11,7 @@
 
 #include <iostream>
 #include <cmath>
-#include "../helpers/convert.h"
+#include "helpers/convert.h"
 
 namespace ImzML {
 

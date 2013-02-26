@@ -12,7 +12,7 @@
 
 namespace ImzML {
 
-	class Activation : public ImzML::MzMLContent {
+    class Activation : public ImzML::MzMLContent {
 	public:
 		Activation();
 		virtual ~Activation();

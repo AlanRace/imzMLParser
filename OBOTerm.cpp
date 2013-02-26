@@ -6,7 +6,7 @@
  */
 
 #include "OBOTerm.h"
-#include "../helpers/trim.h"
+#include "helpers/trim.h"
 
 #include <string>
 #include <iostream>

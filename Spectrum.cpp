@@ -6,7 +6,7 @@
  */
 
 #include "Spectrum.h"
-#include "../helpers/convert.h"
+#include "helpers/convert.h"
 
 
 namespace ImzML {

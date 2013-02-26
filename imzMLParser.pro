@@ -1,5 +1,5 @@
-TEMPLATE = app
-CONFIG += console
+TEMPLATE = lib
+CONFIG += staticlib
 CONFIG -= app_bundle
 CONFIG -= qt
 
@@ -108,7 +108,9 @@ HEADERS += \
     BinaryDataArray.h \
     Binary.h \
     Analyser.h \
-    Activation.h
+    Activation.h \
+    helpers/convert.h \
+    helpers/trim.h
 
 OTHER_FILES += \
     imzMLParser.pro.user
