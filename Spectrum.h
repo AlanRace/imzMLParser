@@ -77,6 +77,7 @@ namespace ImzML {
 		std::vector<double> getMZArray(std::ifstream &ibd);
 		std::vector<double> getIntensityArray();
 		std::vector<double> getIntensityArray(std::ifstream &ibd);
+		void getIntensityArray(std::ifstream &ibd, double* dataLocation);
 
 		void setibdLocation(std::string ibdLocation, std::ifstream *ibdStream) {
 			this->ibdLocation = ibdLocation;

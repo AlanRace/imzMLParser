@@ -69,6 +69,7 @@ namespace ImzML {
 			static int getDataTypeInBytes(ImzML::CVParam* dataType);
 
 			std::vector<double> getDouble(std::ifstream &ibd);
+			void getDouble(std::ifstream &ibd, double* dataLocation);
 
 			friend std::ostream& operator<<(std::ostream& os, const ImzML::BinaryDataArray& bda);
 

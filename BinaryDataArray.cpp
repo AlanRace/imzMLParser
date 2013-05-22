@@ -70,6 +70,11 @@ namespace ImzML {
 //		return dataVector;
 	}
 
+    void BinaryDataArray::getDouble(std::ifstream &ibd, double* dataLocation) {
+		ibd.seekg(getExternalOffset(), std::ios::beg);
+        ibd.read((char*)dataLocation, getExternalEncodedLength());
+	}
+
 	char* BinaryDataArray::getData(std::ifstream &ibd) {
 		ibd.seekg(getExternalOffset(), std::ios::beg);
 		char* buffer = new char[getExternalEncodedLength()];

@@ -147,6 +147,13 @@ namespace ImzML {
 		return intensityArray->getDouble(ibd);
 	}
 
+    void Spectrum::getIntensityArray(std::ifstream &ibd, double* dataLocation) {
+		if(!binaryDataArrayList || !binaryDataArrayList->getIntensityArray())
+			throw "BinaryDataArrayList missing";
+
+		binaryDataArrayList->getIntensityArray()->getDouble(ibd, dataLocation);
+	}
+
 	std::ostream& operator<<(std::ostream& os, const ImzML::Spectrum& spectrum) {
 		for(int i = 0; i < spectrum.indent; i++)
 			os << spectrum.indentString;
