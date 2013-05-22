@@ -31,12 +31,30 @@
 
 #include <map>
 
+#include <exception>
+
 #include <boost/shared_ptr.hpp>
 //#include <boost/unordered_map.hpp>
 
 #include "OBOTerm.h"
 
 namespace ImzML {
+
+    class OBOFileNotFound : public std::exception {
+    private:
+        std::string filename;
+
+    public:
+        OBOFileNotFound(std::string filename) throw() {
+            this->filename = filename;
+        }
+        ~OBOFileNotFound() throw() {
+        }
+
+        virtual const char* what() const throw() {
+            return filename.c_str();
+        }
+    };
 
 	class OBO {
 	private:

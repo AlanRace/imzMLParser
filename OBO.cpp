@@ -32,6 +32,9 @@
 
 #include <cstdlib>
 
+#include <boost/filesystem.hpp>
+#include <boost/filesystem/path.hpp>
+
 namespace ImzML {
 
 	OBO::OBO()
@@ -64,11 +67,17 @@ namespace ImzML {
 		// Make sure that the OBO doesn't have any data in it already
 		cleanup();
 
+        boost::filesystem::path filePath = boost::filesystem::path(filename);
+        boost::filesystem::path dir = filePath.parent_path();
+
 		std::ifstream oboFile;
 
 		oboFile.open(filename.c_str());
 
 		if(!oboFile) {
+            OBOFileNotFound fileNotFound(filename);
+
+            throw fileNotFound;
 			std::cout << "ERROR: Could not open " << filename << std::endl;
 		}
 
@@ -122,7 +131,10 @@ namespace ImzML {
 				trim(value);
 
 				if(tag.compare("import") == 0) {
-					imports.push_back(boost::shared_ptr<OBO>(new OBO(value)));
+                    //
+                    boost::filesystem::path import = dir / value;
+
+                    imports.push_back(boost::shared_ptr<OBO>(new OBO(import.string())));
 				}
 			}
 		}
