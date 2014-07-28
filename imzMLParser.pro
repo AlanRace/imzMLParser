@@ -116,5 +116,7 @@ OTHER_FILES += \
     imzMLParser.pro.user
 
 unix: INCLUDEPATH += /usr/local/xerces/include/
+unix: INCLUDEPATH += /home/alan/boost_1_53_0/
 unix: LIBS += -L/usr/local/xerces/lib/
+unix: LIBS += -L/home/alan/boost_1_53_0/stage/lib
 unix|win32: LIBS += -lxerces-c

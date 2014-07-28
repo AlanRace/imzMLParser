@@ -75,6 +75,18 @@ namespace ImzML {
         ibd.read((char*)dataLocation, getExternalEncodedLength());
 	}
 
+    void BinaryDataArray::getFloat(std::ifstream &ibd, float* dataLocation) {
+        double *temp = new double[getExternalArrayLength()];
+
+        ibd.seekg(getExternalOffset(), std::ios::beg);
+        ibd.read((char*)temp, getExternalEncodedLength());
+
+        for(int i = 0; i < getExternalArrayLength(); i++)
+            dataLocation[i] = (float)temp[i];
+
+        delete temp;
+    }
+
 	char* BinaryDataArray::getData(std::ifstream &ibd) {
 		ibd.seekg(getExternalOffset(), std::ios::beg);
 		char* buffer = new char[getExternalEncodedLength()];

@@ -70,6 +70,7 @@ namespace ImzML {
 
 			std::vector<double> getDouble(std::ifstream &ibd);
 			void getDouble(std::ifstream &ibd, double* dataLocation);
+            void getFloat(std::ifstream &ibd, float* dataLocation);
 
 			friend std::ostream& operator<<(std::ostream& os, const ImzML::BinaryDataArray& bda);
 
